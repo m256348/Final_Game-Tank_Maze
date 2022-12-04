@@ -9,6 +9,7 @@ pygame.display.set_caption("Tank Maze")
 
 run_game = True
 start_game = False
+end_game = False
 
 ice_image = pygame.image.load('images/ice_image.png')
 ice_rect = ice_image.get_rect()
@@ -50,7 +51,7 @@ start_time = 90
 while run_game:
     draw_background()
     dirt.draw_maze(screen)
-    button.draw_button(screen)
+    button.draw_start_button(screen)
 
     coordinate_x = pygame.mouse.get_pos()[0]
     coordinate_y = pygame.mouse.get_pos()[1]
@@ -68,6 +69,8 @@ while run_game:
     if start_game:
     # Tank Movement
         coordinate = pygame.mouse.get_pos()
+        coordinate_x = pygame.mouse.get_pos()[0]
+        coordinate_y = pygame.mouse.get_pos()[1]
         tank.move(coordinate)
         tank.draw(screen)
 
@@ -93,8 +96,23 @@ while run_game:
         # Limit frames per second
         clock.tick(frame_rate)
 
+    # End Flags
+        button.draw_end_button(screen)
+        end_game = True
+
+    if end_game:
+        coordinate_x = pygame.mouse.get_pos()[0]
+        coordinate_y = pygame.mouse.get_pos()[1]
+
+        print(coordinate_x, coordinate_y)
+
+        if coordinate_x in range(440, 456) and coordinate_y in range(573, 639):
+            screen.fill((0, 0, 0))
+            button.draw_end_screen(screen)
+
 
     pygame.display.flip()
+
 
 
 
