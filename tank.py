@@ -11,3 +11,8 @@ class Tank():
 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
+
+    # def check_collisions(self, walls):
+    #     for wall in walls:
+    #         if self.rect.colliderect(wall.rect):
+    #             print('hi')
