@@ -93,10 +93,23 @@ while run_game:
     if start_game:
     # Tank Movement
         coordinate = pygame.mouse.get_pos()
+        print(coordinate)
         coordinate_x = pygame.mouse.get_pos()[0]
         coordinate_y = pygame.mouse.get_pos()[1]
         tank.move(coordinate)
         tank.draw(screen)
+        if coordinate_x in range(100, 150) and coordinate_y in range(590, 625):
+            start_game = False
+            end_game = False
+            fail_screen = True
+        if coordinate_x in range(100, 150) and coordinate_y in range(335, 360):
+            start_game = False
+            end_game = False
+            fail_screen = True
+        if coordinate_x in range(100, 150) and coordinate_y in range(460, 490):
+            start_game = False
+            end_game = False
+            fail_screen = True
         if tank.check_collisions(walls):
             start_game = False
             end_game = False

@@ -86,6 +86,10 @@ class Maze:
             surface.blit(self.image, (320, 576))
             surface.blit(self.image, (384, 576))
 
+            surface.blit(self.image, (64, 448))
+            surface.blit(self.image, (128, 448))
+            surface.blit(self.image, (256, 256))
+
 class Wall(object):
     def __init__(self, pos, walls):
         walls.append(self)
