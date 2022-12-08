@@ -6,9 +6,11 @@ class Button():
         self.start_image = pygame.image.load('images/start_image.png')
         self.end_image = pygame.image.load('images/FinishLine.png')
         self.end_screen = pygame.image.load('images/GameOver.png')
+        self.fail_screen = pygame.image.load('images/failscreen.png')
         self.rect = self.start_image.get_rect()
         self.end_rect = self.end_image
         self.end_screen = self.end_screen
+        self.fail_screen = self.fail_screen
         self.screen = (0, 192)
 
     def draw_start_button(self, screen):
@@ -19,3 +21,6 @@ class Button():
 
     def draw_end_screen(self, screen):
         screen.blit(self.end_screen, (0, 0))
+
+    def draw_fail_screen(self, screen):
+        screen.blit(self.fail_screen, (0, 0))

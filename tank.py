@@ -1,4 +1,5 @@
 import pygame
+end_game = False
 
 class Tank():
     def __init__(self):
@@ -12,7 +13,16 @@ class Tank():
     def draw(self, screen):
         screen.blit(self.image, self.rect)
 
-    # def check_collisions(self, walls):
-    #     for wall in walls:
-    #         if self.rect.colliderect(wall.rect):
-    #             print('hi')
+    def check_collisions(self, walls):
+        for wall in walls:
+            collide = pygame.Rect.colliderect(self.rect, wall)
+            if collide:
+                #print('hi')
+                return True
+            #else:
+                #return False
+
+    # def checkCollisionsx(self, tiles):
+    #     collisions = self.get_hits(tiles)
+    #     for tile in collisions:
+
