@@ -5,10 +5,12 @@ This mission does not only require steady fingers, but it also requires some luc
 
 
 
-*** Notes on Code
+*** Notes on Code:
+
 The main code is run on the sandbox.py file, which imports several functions and classes from other supporting files.
 If you go out of the maze or find yourself on the wrong path, a fail screen will appear letting you know that you have failed the mission.
 If you get through the correct path to the target area, the time will be tracked and an end screen will appear letting you know of your succuess in completing the mission.
 
 One last tip from the creator:
+
     "Two roads diverged in a yellow path..." - Robert Frost
